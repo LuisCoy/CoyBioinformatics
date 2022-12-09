@@ -9,19 +9,21 @@ volcano_plot(
   x = "Log2fold",
   y = "Log10pvalue",
   p_value = 0.05,
-  Log2foldvalue = 1
+  log2foldvalue = 1,
+  point_size = 2,
+  text_size = 20
 )
 }
 \arguments{
 \item{df}{Dataframe containing Log2 fold change and Log10 p-value columns}
 
-\item{x}{Column name (string) for Log2 fold change}
+\item{x}{A character string giving the Log2 fold change column name}
 
-\item{y}{Column name (string) for Log10 p-value}
+\item{y}{A character string giving the Log10 p-value column name}
 
-\item{p_value}{p=value cut off defaults to 0.05}
+\item{p_value}{p-value cut off; defaults to 0.05}
 
-\item{Log2foldvalue}{Log2 fold change cut off defaults to 1}
+\item{Log2foldvalue}{Log2 fold change cut off; defaults to 1}
 }
 \value{
 Volcano plot

@@ -1,10 +1,10 @@
 #' Volcano plot for proteomic data
 #'
 #' @param df Dataframe containing Log2 fold change and Log10 p-value columns
-#' @param x Column name (string) for Log2 fold change
-#' @param y Column name (string) for Log10 p-value
-#' @param p_value p=value cut off defaults to 0.05
-#' @param Log2foldvalue Log2 fold change cut off defaults to 1
+#' @param x A character string giving the Log2 fold change column name
+#' @param y A character string giving the Log10 p-value column name
+#' @param p_value p-value cut off; defaults to 0.05
+#' @param Log2foldvalue Log2 fold change cut off; defaults to 1
 #'
 #' @return Volcano plot
 #' @export
