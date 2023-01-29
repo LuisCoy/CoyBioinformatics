@@ -3,5 +3,6 @@
 export(bca_analysis)
 export(bca_plot)
 export(create_proteomic_example)
+export(point_plot)
 export(pvalue_histogram)
 export(volcano_plot)
