@@ -2,8 +2,10 @@
 
 export(bca_analysis)
 export(bca_plot)
+export(coverage_plot)
 export(create_proteomic_example)
 export(histogram_overlapping)
+export(missing_data_plot)
 export(point_plot)
 export(pvalue_histogram)
 export(volcano_plot)
