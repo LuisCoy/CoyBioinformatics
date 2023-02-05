@@ -1,15 +1,16 @@
 #' Missing data plot
+#' @description Plots the number of proteins with missing expression data for each sample. Requires a long format dataframe with the number of proteins present and missing in each sample.
 #'
-#' @param df
-#' @param sample
-#' @param name
-#' @param value
-#' @param group
-#' @param x_label
-#' @param y_label
-#' @param title
-#' @param tag
-#' @param legend_label
+#' @param df Dataframe
+#' @param sample A character string giving the column name for the sample IDs
+#' @param name A character string giving the column containing present or missing
+#' @param value A character string giving the column containing the number of proteins present or missing
+#' @param group A character string giving the column with the group IDs e.g. "Treated" and "Control"
+#' @param x_label X axis label; defaults to "Samples"
+#' @param y_label Y axis label; defaults to "Number of proteins"
+#' @param title A character string giving the plot Title
+#' @param tag A character string giving the  plot tag
+#' @param legend_label A character string giving the legend label
 #'
 #' @return plot
 #' @export
