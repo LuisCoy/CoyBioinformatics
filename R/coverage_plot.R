@@ -1,19 +1,20 @@
 #' Coverage Plot
+#' @description Plots the coverage of proteins across the replicates. Requires summarised data that contains how many samples contain expression data for each protein, as a percentage of the total number of proteins.
 #'
-#' @param df
-#' @param number_of_samples
-#' @param percentage
-#' @param tally
-#' @param a
-#' @param b
-#' @param group
-#' @param a_colour
-#' @param b_colour
-#' @param x_label
-#' @param y_label
-#' @param title
-#' @param tag
-#' @param legend_label
+#' @param df Dataframe
+#' @param number_of_samples A character string giving the column containing the number of samples
+#' @param percentage A character string giving the column that contains the percentages
+#' @param tally A character string giving the column that contains the number of proteins
+#' @param a A character string giving the name of group a e.g. "Treated"
+#' @param b A character string giving the name of group b e.g. "Control"
+#' @param group A character string giving the column containing the group IDs
+#' @param a_colour A character string giving the colour for group a
+#' @param b_colour A character string giving the colour for group b
+#' @param x_label X axis label; defaults to "Number of Samples"
+#' @param y_label Y axis label; defaults to "Percentage of Proteins"
+#' @param title A character string giving the plot Title
+#' @param tag A character string giving the  plot tag
+#' @param legend_label A character string giving the legend label
 #'
 #' @return Plot
 #' @export

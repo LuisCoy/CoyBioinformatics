@@ -22,11 +22,37 @@ coverage_plot(
 )
 }
 \arguments{
-\item{legend_label}{}
+\item{df}{Dataframe}
+
+\item{number_of_samples}{A character string giving the column containing the number of samples}
+
+\item{percentage}{A character string giving the column that contains the percentages}
+
+\item{tally}{A character string giving the column that contains the number of proteins}
+
+\item{a}{A character string giving the name of group a e.g. "Treated"}
+
+\item{b}{A character string giving the name of group b e.g. "Control"}
+
+\item{group}{A character string giving the column containing the group IDs}
+
+\item{a_colour}{A character string giving the colour for group a}
+
+\item{b_colour}{A character string giving the colour for group b}
+
+\item{x_label}{X axis label; defaults to "Number of Samples"}
+
+\item{y_label}{Y axis label; defaults to "Percentage of Proteins"}
+
+\item{title}{A character string giving the plot Title}
+
+\item{tag}{A character string giving the  plot tag}
+
+\item{legend_label}{A character string giving the legend label}
 }
 \value{
 Plot
 }
 \description{
-Coverage Plot
+Plots the coverage of proteins across the replicates. Requires summarised data that contains how many samples contain expression data for each protein, as a percentage of the total number of proteins.
 }
