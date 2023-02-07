@@ -1,0 +1,62 @@
+#' Plot PCA Results
+#'
+#' This function creates a scatter plot of principal component analysis (PCA) results, highlighting two groups of replicates.
+#'
+#' @param df Matrix containing IDs (accession or gene) as columns and samples as rows.
+#' @param center Logical; if `TRUE`, variables will be centered (mean-subtracted) prior to PCA.
+#' @param scale Logical; if `TRUE`, variables will be scaled (divided by standard deviation) prior to PCA.
+#' @param a Character string representing the name of the first group of replicates.
+#' @param b Character string representing the name of the second group of replicates.
+#' @param a_replicates Integer value representing the number of replicates in the first group.
+#' @param b_replicates Integer value representing the number of replicates in the second group.
+#' @param a_colour Hexadecimal color code for the first group.
+#' @param b_colour Hexadecimal color code for the second group.
+#' @param text_size Integer value specifying the text size in the plot.
+#' @param title Character string for the plot title.
+#' @param tag Character string for the plot tag.
+#' @param legend_label Character string for the plot legend label.
+#' @return A scatter plot of PCA results highlighting the two groups of replicates.
+#' @import ggbiplot ggplot2
+#' @importFrom stringr str_c
+#' @importFrom ggplot2 labs scale_colour_manual theme theme_light
+#' @export
+#' @examples
+#' pca_plot(matrix = example_matrix_data, a_replicates = 4, b_replicates = 4)
+#'
+pca_plot <- function(matrix, center = T, scale = T, a = "Treated", b = "Control", a_replicates, b_replicates, a_colour = "#D55E00", b_colour = "#3DB7E9", text_size = 20, title = NULL, tag = NULL, legend_label = NULL){
+  #remove NA values
+  matrix[base::is.na(matrix)] <- 0
+  #pca
+  pca <- prcomp(matrix, center = center, scale. = scale)
+  #get pc1 and pc2 values for axis labels
+  pca_var <-
+    summary(pca)
+
+  var_PC1 <-
+    round(pca_var[[6]][2,1]*100,1)
+
+  var_PC2 <-
+    round(pca_var[[6]][2,2]*100, 1)
+  #groups
+  groups <- factor(c(rep(a,a_replicates),
+                     rep(b, b_replicates)),
+                   ordered = T,
+                   levels = c(a,b))
+  #plot
+  ggbiplot::ggbiplot(pca,
+                     var.axes = F,
+                     groups = groups,
+                     ellipse = T)+
+    ggplot2::labs(title = title,
+                  tags = tag,
+                  x = stringr::str_c("PC1 (",var_PC1,"% explained var.)"),
+                  y = stringr::str_c("PC2 (",var_PC2,"% explained var.)"))+
+    ggplot2::scale_colour_manual(legend_label,
+                                 values = c(a_colour,
+                                            b_colour),
+                                 labels = c(a,
+                                            b))+
+    ggplot2::theme(text = element_text(size = text_size))+
+    ggplot2::theme_light()
+}
+
