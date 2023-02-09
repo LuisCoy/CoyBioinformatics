@@ -30,7 +30,7 @@ format_peaks <- function(file, a, b, columns.a, columns.b, accession.split = c("
   }
 
   protein_df <- tidyr::separate(data = protein_df, col = Accession, into = accession.split, sep = "([|])")
-  protein_df <-  dplyr::mutate(.data = protein_df, "Gene_name" = str_extract(Description, "GN=[^ ]+"),
-                               "Gene_name" = str_extract(Gene_name, "[^=]+$"))
+  protein_df <-  dplyr::mutate(.data = protein_df, "Gene_name" = stringr::str_extract(Description, "GN=[^ ]+"),
+                               "Gene_name" = stringr::str_extract(Gene_name, "[^=]+$"))
   return(protein_df)
 }
