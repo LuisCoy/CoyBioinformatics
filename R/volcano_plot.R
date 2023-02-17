@@ -17,8 +17,8 @@
 volcano_plot <- function(df, x = "Log2fold", y = "Log10pvalue", p_value = 0.05, log2foldvalue = 1, point_size = 2, text_size = 20,  axis_label_x = "Fold Change", axis_label_y = "P-value"){
   x_axis_length <- base::round(max(sqrt(df[,x]^2)), 0)+1
 
-    df_regulation <- dplyr::mutate(df, "regulation" = dplyr::case_when(x >= log2foldvalue & y >= -log10(p_value) ~ "up",
-                                                                       x <= -log2foldvalue & y >= -log10(p_value) ~ "down",
+    df_regulation <- dplyr::mutate(df, "regulation" = dplyr::case_when(!!sym(x) >= log2foldvalue & !!sym(y) >= -log10(p_value) ~ "up",
+                                                                       !!sym(x) <= -log2foldvalue & !!sym(y) >= -log10(p_value) ~ "down",
                                                                        T ~ "neutral"))
 
     ggplot2::ggplot(data = df_regulation,ggplot2::aes_string(x = x, y = y, col = "regulation"))+
