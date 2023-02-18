@@ -13,17 +13,17 @@ volcano_plot(
   point_size = 2,
   text_size = 20,
   axis_label_x = "Fold Change",
-  axis_label_y = "P-value"
+  axis_label_y = "p value"
 )
 }
 \arguments{
-\item{df}{Dataframe containing Log2 fold change and Log10 p-value columns}
+\item{df}{Dataframe containing Log2 fold change and Log10 p value columns}
 
 \item{x}{A character string giving the Log2 fold change column name}
 
-\item{y}{A character string giving the Log10 p-value column name}
+\item{y}{A character string giving the Log10 p value column name}
 
-\item{p_value}{p-value cut off; defaults to 0.05}
+\item{p_value}{p value cut off; defaults to 0.05}
 
 \item{point_size}{Point size; defaults to 2}
 
@@ -31,7 +31,7 @@ volcano_plot(
 
 \item{axis_label_x}{X axis label; defaults to "Fold Change"}
 
-\item{axis_label_y}{Y axis label; defaults to "P-value}
+\item{axis_label_y}{Y axis label; defaults to "p value}
 
 \item{Log2foldvalue}{Log2 fold change cut off; defaults to 1}
 }

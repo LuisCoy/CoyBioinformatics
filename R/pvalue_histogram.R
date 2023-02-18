@@ -1,18 +1,18 @@
 #' pvalue histogram plot for proteomic data
 #'
 #' @param df Dataframe containing p-values
-#' @param x A character string giving the p-value column name
+#' @param x A character string giving the p value column name
 #' @param text_size Font size; defaults to 20
 #'
 #' @return Histogram
 #' @export
 #'
 #' @examples
-pvalue_histogram <- function(df, x = "pvalue", text_size = 20){
+pvalue_histogram <- function(df, x = "pvalue", text_size = 20, axis_label_x = "p value", axis_label_y = "Frequency"){
   ggplot2::ggplot(data = df, ggplot2::aes_string(x = x))+
     ggplot2::geom_histogram(binwidth = 0.05, boundary = 0, fill = "#2271B2")+
-    ggplot2::labs(x = "p-value",
-                  y = "Frequency",
+    ggplot2::labs(x = axis_label_x,
+                  y = axis_label_y,
                   tag = NULL,
                   title = NULL)+
     ggplot2::theme_light()+

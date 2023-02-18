@@ -4,12 +4,18 @@
 \alias{pvalue_histogram}
 \title{pvalue histogram plot for proteomic data}
 \usage{
-pvalue_histogram(df, x = "pvalue", text_size = 20)
+pvalue_histogram(
+  df,
+  x = "pvalue",
+  text_size = 20,
+  axis_label_x = "p value",
+  axis_label_y = "Frequency"
+)
 }
 \arguments{
 \item{df}{Dataframe containing p-values}
 
-\item{x}{A character string giving the p-value column name}
+\item{x}{A character string giving the p value column name}
 
 \item{text_size}{Font size; defaults to 20}
 }

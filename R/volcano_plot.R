@@ -1,20 +1,20 @@
 #' Volcano plot for proteomic data
 #'
-#' @param df Dataframe containing Log2 fold change and Log10 p-value columns
+#' @param df Dataframe containing Log2 fold change and Log10 p value columns
 #' @param x A character string giving the Log2 fold change column name
-#' @param y A character string giving the Log10 p-value column name
-#' @param p_value p-value cut off; defaults to 0.05
+#' @param y A character string giving the Log10 p value column name
+#' @param p_value p value cut off; defaults to 0.05
 #' @param Log2foldvalue Log2 fold change cut off; defaults to 1
 #' @param point_size Point size; defaults to 2
 #' @param text_size Text size; defaults to 20
 #' @param axis_label_x X axis label; defaults to "Fold Change"
-#' @param axis_label_y Y axis label; defaults to "P-value
+#' @param axis_label_y Y axis label; defaults to "p value
 #'
 #' @return Volcano plot
 #' @export
 #'
 #' @examples volcano_plot(example_proteomic_data)
-volcano_plot <- function(df, x = "Log2fold", y = "Log10pvalue", p_value = 0.05, log2foldvalue = 1, point_size = 2, text_size = 20,  axis_label_x = "Fold Change", axis_label_y = "P-value"){
+volcano_plot <- function(df, x = "Log2fold", y = "Log10pvalue", p_value = 0.05, log2foldvalue = 1, point_size = 2, text_size = 20,  axis_label_x = "Fold Change", axis_label_y = "p value"){
   x_axis_length <- base::round(max(sqrt(df[,x]^2)), 0)+1
 
     df_regulation <- dplyr::mutate(df, "regulation" = dplyr::case_when(!!sym(x) >= log2foldvalue & !!sym(y) >= -log10(p_value) ~ "up",
