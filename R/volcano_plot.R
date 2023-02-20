@@ -23,8 +23,8 @@ volcano_plot <- function(df, x = "Log2fold", y = "Log10pvalue", p_value = 0.05, 
 
     ggplot2::ggplot(data = df_regulation,ggplot2::aes_string(x = x, y = y, col = "regulation"))+
     ggplot2::geom_point(size = point_size)+
-    ggplot2::labs(x = bquote(Log[2]* ~ (.(axis_label_x))),
-         y = bquote(-Log[10]* ~(.(axis_label_y))),
+    ggplot2::labs(x = bquote(Log[2]* (.(axis_label_x))),
+         y = bquote(-Log[10]*(.(axis_label_y))),
          tag = NULL,
          title = NULL)+
     ggplot2::geom_vline(xintercept = c(-log2foldvalue,log2foldvalue), color = "black", size = 1, linetype = "dashed")+
