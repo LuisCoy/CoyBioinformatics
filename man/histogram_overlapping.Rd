@@ -2,7 +2,7 @@
 % Please edit documentation in R/histogram_overlapping.R
 \name{histogram_overlapping}
 \alias{histogram_overlapping}
-\title{Histogram Overlapping}
+\title{Plot two-group histograms}
 \usage{
 histogram_overlapping(
   df,
@@ -10,23 +10,58 @@ histogram_overlapping(
   a,
   b,
   group,
-  a_colour = "#F748A5",
-  b_colour = "#3BB9FF",
+  colour.a = "#F748A5",
+  colour.b = "#3BB9FF",
   bins = 100,
-  x_label = NULL,
-  y_label = "Count",
+  binwidth = NULL,
+  label.x = NULL,
+  label.y = "Count",
   title = NULL,
   tag = NULL,
-  legend_label = NULL,
+  label.legend = NULL,
   alpha = 0.5
 )
 }
 \arguments{
-\item{alpha}{}
+\item{df}{Dataframe containing the data to plot}
+
+\item{x}{Character string giving the column containing the values}
+
+\item{a}{Character string giving the name of group a e.g. "Treated"}
+
+\item{b}{Character string giving the name of group b e.g. "Control"}
+
+\item{group}{Character string giving the column containing the group IDs}
+
+\item{colour.a}{Character string giving the fill color for group a; defaults to "#F748A5"}
+
+\item{colour.b}{Character string giving the fill color for group b;defaults to "#3BB9FF"}
+
+\item{bins}{Number of bins to use in the histogram; defaults to 100}
+
+\item{binwidth}{Width of the bins in the histogram; defaults to NULL}
+
+\item{label.x}{X axis label; defaults to NULL}
+
+\item{label.y}{Y axis label; defaults to "Count"}
+
+\item{title}{Character string giving the plot title; defaults to NULL}
+
+\item{tag}{Character string giving the plot tag; defaults to NULL}
+
+\item{label.legend}{Character string giving the legend label; defaults to NULL}
+
+\item{alpha}{The transparency of the fill color; defaults to 0.5}
 }
 \value{
-Histogram
+A ggplot2 histogram plot with vertical lines indicating the median value of each group
 }
 \description{
-Histogram Overlapping
+This function creates a histogram plot of two groups with overlapping histograms
+and adds vertical lines to indicate the median value of each group.
+}
+\examples{
+df <- data.frame(abundances = rnorm(1000), group = sample(c("Treated", "Control"), 1000, replace = TRUE))
+histogram_overlapping(df, "abundances", "Treated", "Control", "group", label.x = "Protein Abundances", label.legend = "Groups")
+
 }
