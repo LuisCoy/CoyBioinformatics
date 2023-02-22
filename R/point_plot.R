@@ -18,6 +18,7 @@
 #' @param title A character string giving the title
 #' @param tag A character string giving the tag
 #' @param text_size A value for the text size; defaults to 20
+#' @param transparent A logical value for a transparent background; defaults to True
 #'
 #' @return Plot
 #' @export

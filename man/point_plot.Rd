@@ -59,6 +59,8 @@ point_plot(
 \item{tag}{A character string giving the tag}
 
 \item{text_size}{A value for the text size; defaults to 20}
+
+\item{transparent}{A logical value for a transparent background; defaults to True}
 }
 \value{
 Plot
