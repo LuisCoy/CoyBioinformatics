@@ -20,7 +20,9 @@ point_plot(
   y_label = NULL,
   col_label = NULL,
   title = NULL,
-  tag = NULL
+  tag = NULL,
+  text_size = 20,
+  transparent = T
 )
 }
 \arguments{
@@ -55,6 +57,8 @@ point_plot(
 \item{title}{A character string giving the title}
 
 \item{tag}{A character string giving the tag}
+
+\item{text_size}{A value for the text size; defaults to 20}
 }
 \value{
 Plot

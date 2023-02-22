@@ -17,12 +17,13 @@
 #' @param col_label A character string giving the colour label
 #' @param title A character string giving the title
 #' @param tag A character string giving the tag
+#' @param text_size A value for the text size; defaults to 20
 #'
 #' @return Plot
 #' @export
 #'
 #' @examples
-point_plot <- function(df, x, y, col = "condition", sd, formula = y~stats::poly(x,2), line_size = 0.7, error_bar_factor = 0.02, expand_y_factor = 0.2, expand_x_factor = 0.1, legend_position = c(0.80,0.2), x_label = NULL, y_label = NULL,col_label = NULL,title = NULL, tag = NULL){
+point_plot <- function(df, x, y, col = "condition", sd, formula = y~stats::poly(x,2), line_size = 0.7, error_bar_factor = 0.02, expand_y_factor = 0.2, expand_x_factor = 0.1, legend_position = c(0.80,0.2), x_label = NULL, y_label = NULL,col_label = NULL,title = NULL, tag = NULL, text_size = 20, transparent = T){
   # remove any x values which are 0
   df <- dplyr::filter(.data = df, .data[[x]] != 0)
 
@@ -38,7 +39,8 @@ point_plot <- function(df, x, y, col = "condition", sd, formula = y~stats::poly(
     col_label <- col
   }
 
-  ggplot2::ggplot(data = df, ggplot2::aes_string(x = x, y = y, col = col))+
+  plot <-
+  ggplot2::ggplot(data = df, ggplot2::aes(x = !!sym(x), y = !!sym(y), col = !!sym(col)))+
     ggplot2::geom_point()+
     ggplot2::stat_smooth(method = lm,
                          formula = formula,
@@ -52,8 +54,20 @@ point_plot <- function(df, x, y, col = "condition", sd, formula = y~stats::poly(
     ggplot2::geom_errorbar(ggplot2::aes(ymin=.data[[y]]-.data[[sd]], ymax=.data[[y]]+.data[[sd]], width = error_bar_width))+
     ggplot2::theme_light()+
     ggplot2::theme(legend.position = legend_position,
-                   legend.background =  ggplot2::element_rect(fill = ggplot2::alpha("white",0.5), color = ggplot2::alpha("grey",0.5)))+
+                   legend.background =  ggplot2::element_rect(fill = ggplot2::alpha("white",0.5),
+                                                              color = ggplot2::alpha("grey",0.5)),
+                   text = ggplot2::element_text( size = text_size))+
     ggplot2::scale_y_continuous(expand = c(expand_y_factor,0))+
     ggplot2::scale_x_continuous(expand = c(expand_x_factor,0))
 
+  if (transparent){
+    plot+
+      theme(
+        panel.background = element_rect(fill='transparent'), #transparent panel bg
+        plot.background = element_rect(fill='transparent', color=NA), #transparent plot bg
+        legend.background = element_rect(fill='transparent'), #transparent legend bg
+        legend.box.background = element_rect(fill='transparent') #transparent legend panel
+      )
+  }
+  plot(plot)
 }
