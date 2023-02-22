@@ -24,51 +24,88 @@
 #' @export
 #'
 #' @examples
-point_plot <- function(df, x, y, col = "condition", sd, formula = y~stats::poly(x,2), line_size = 0.7, error_bar_factor = 0.02, expand_y_factor = 0.2, expand_x_factor = 0.1, legend_position = c(0.80,0.2), x_label = NULL, y_label = NULL,col_label = NULL,title = NULL, tag = NULL, text_size = 20, transparent = T){
-  # remove any x values which are 0
-  df <- dplyr::filter(.data = df, .data[[x]] != 0)
+point_plot <-
+  function(df,
+           x,
+           y,
+           col = "condition",
+           sd,
+           formula = y ~ stats::poly(x, 2),
+           line_size = 0.7,
+           error_bar_factor = 0.02,
+           expand_y_factor = 0.2,
+           expand_x_factor = 0.1,
+           legend_position = c(0.80, 0.2),
+           x_label = NULL,
+           y_label = NULL,
+           col_label = NULL,
+           title = NULL,
+           tag = NULL,
+           text_size = 20,
+           transparent = T) {
+    # remove any x values which are 0
+    df <- dplyr::filter(.data = df, .data[[x]] != 0)
 
-  error_bar_width <- diff(range(df[x]))*error_bar_factor
+    error_bar_width <- diff(range(df[x])) * error_bar_factor
 
-  if (is.null(x_label)){
-    x_label <- x
-  }
-  if (is.null(y_label)){
-    y_label <- y
-  }
-  if (is.null(col_label)){
-    col_label <- col
-  }
+    if (is.null(x_label)) {
+      x_label <- x
+    }
+    if (is.null(y_label)) {
+      y_label <- y
+    }
+    if (is.null(col_label)) {
+      col_label <- col
+    }
 
-  plot <-
-  ggplot2::ggplot(data = df, ggplot2::aes(x = !!sym(x), y = !!sym(y), col = !!sym(col)))+
-    ggplot2::geom_point()+
-    ggplot2::stat_smooth(method = lm,
-                         formula = formula,
-                         se = F,
-                         size = line_size)+
-    ggplot2::labs(x = x_label,
-                  y = y_label,
-                  col = col_label,
-                  title = title,
-                  tag = tag)+
-    ggplot2::geom_errorbar(ggplot2::aes(ymin=.data[[y]]-.data[[sd]], ymax=.data[[y]]+.data[[sd]], width = error_bar_width))+
-    ggplot2::theme_light()+
-    ggplot2::theme(legend.position = legend_position,
-                   legend.background =  ggplot2::element_rect(fill = ggplot2::alpha("white",0.5),
-                                                              color = ggplot2::alpha("grey",0.5)),
-                   text = ggplot2::element_text( size = text_size))+
-    ggplot2::scale_y_continuous(expand = c(expand_y_factor,0))+
-    ggplot2::scale_x_continuous(expand = c(expand_x_factor,0))
-
-  if (transparent){
-    plot+
-      theme(
-        panel.background = element_rect(fill='transparent'), #transparent panel bg
-        plot.background = element_rect(fill='transparent', color=NA), #transparent plot bg
-        legend.background = element_rect(fill='transparent'), #transparent legend bg
-        legend.box.background = element_rect(fill='transparent') #transparent legend panel
+    if (transparent) {
+      plot_theme <- ggplot2::theme(
+        panel.background = ggplot2::element_rect(fill = 'transparent'),
+        plot.background = ggplot2::element_rect(fill = 'transparent', color =
+                                                  NA),
+        legend.background = ggplot2::element_rect(fill = 'transparent'),
+        legend.box.background = ggplot2::element_rect(fill = 'transparent')
       )
+    } else {
+      plot_theme <-
+        ggplot2::theme(
+          legend.background =  ggplot2::element_rect(
+            fill = ggplot2::alpha("white", 0.5),
+            color = ggplot2::alpha("grey", 0.5)
+          )
+        )
+    }
+
+    plot <-
+      ggplot2::ggplot(data = df, ggplot2::aes(
+        x = !!sym(x),
+        y = !!sym(y),
+        col = !!sym(col)
+      )) +
+      ggplot2::geom_point() +
+      ggplot2::stat_smooth(
+        method = lm,
+        formula = formula,
+        se = F,
+        size = line_size
+      ) +
+      ggplot2::labs(
+        x = x_label,
+        y = y_label,
+        col = col_label,
+        title = title,
+        tag = tag
+      ) +
+      ggplot2::geom_errorbar(ggplot2::aes(
+        ymin = .data[[y]] - .data[[sd]],
+        ymax = .data[[y]] + .data[[sd]],
+        width = error_bar_width
+      )) +
+      ggplot2::theme_light() +
+      ggplot2::theme(legend.position = legend_position,
+                     text = ggplot2::element_text(size = text_size)) +
+      ggplot2::scale_y_continuous(expand = c(expand_y_factor, 0)) +
+      ggplot2::scale_x_continuous(expand = c(expand_x_factor, 0)) +
+      plot_theme
+
   }
-  plot(plot)
-}
