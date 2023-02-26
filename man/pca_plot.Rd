@@ -17,10 +17,16 @@ pca_plot(
   text_size = 20,
   title = NULL,
   tag = NULL,
-  legend_label = NULL
+  legend_label = NULL,
+  legend_position = c(0.6, 0.8),
+  legend_colour = "white",
+  legend_alpha = 0.5,
+  transparent = T
 )
 }
 \arguments{
+\item{matrix}{A matrix with IDs across the columns and samples down the rows}
+
 \item{center}{Logical; if \code{TRUE}, variables will be centered (mean-subtracted) prior to PCA.}
 
 \item{scale}{Logical; if \code{TRUE}, variables will be scaled (divided by standard deviation) prior to PCA.}
@@ -45,7 +51,13 @@ pca_plot(
 
 \item{legend_label}{Character string for the plot legend label.}
 
-\item{df}{Matrix containing IDs (accession or gene) as columns and samples as rows.}
+\item{legend_position}{A vector for the legend position; defaults to c(0.8, 0.2).}
+
+\item{legend_colour}{Hexadecimal color code for the legend background; defaults to white.}
+
+\item{legend_alpha}{A value between 0 and 1 for the transparency of the legend; defaults to 0.5.}
+
+\item{transparent}{A logical value for a transparent background; defaults to True.}
 }
 \value{
 A scatter plot of PCA results highlighting the two groups of replicates.
