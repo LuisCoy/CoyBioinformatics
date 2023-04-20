@@ -8,8 +8,8 @@
 #' @param b Character string for group B, defaults to "Control"
 #' @return A transposed data frame with sample names as row names and feature names as column names
 #' @examples
-#' create_example_matrix()
-#' create_example_matrix(replicate_n = 5, feature_n = 80, seed = 123, a = "Experiment1", b = "Experiment2")
+#' create_matrix_example()
+#' create_matrix_example(replicate_n = 5, feature_n = 80, seed = 123, a = "Experiment1", b = "Experiment2")
 #' @export
 create_matrix_example <- function(replicate_n = 4, feature_n = 100, seed = 123, a = "Treated", b = "Control"){
   base::set.seed(seed)

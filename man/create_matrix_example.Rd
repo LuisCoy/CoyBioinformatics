@@ -41,6 +41,6 @@ A matrix with \code{replicate_n} columns and \code{feature_n} rows
 Generate Example Expression Data for PCA Plotting
 }
 \examples{
-create_example_matrix()
-create_example_matrix(replicate_n = 5, feature_n = 80, seed = 123, a = "Experiment1", b = "Experiment2")
+create_matrix_example()
+create_matrix_example(replicate_n = 5, feature_n = 80, seed = 123, a = "Experiment1", b = "Experiment2")
 }
