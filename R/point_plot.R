@@ -87,7 +87,7 @@ point_plot <-
         method = lm,
         formula = formula,
         se = F,
-        size = line_size
+        linewidth = line_size
       ) +
       ggplot2::labs(
         x = x_label,
