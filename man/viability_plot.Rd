@@ -13,7 +13,7 @@ viability_plot(
   size_line = 1,
   size_point = 2,
   size_text = 20,
-  error_bar_factor = 0.05,
+  width_error_bar = 0.05,
   position_legend = c(0.2, 0.2),
   label_x = NULL,
   label_y = "Cell Viability (\%)",
@@ -46,7 +46,7 @@ viability_plot(
 
 \item{size_text}{A value for the text size; defaults to 20}
 
-\item{error_bar_factor}{A value that is multiplied by the x axis range to set the error bar width; defaults to 0.05}
+\item{width_error_bar}{A value for the error bar width; defaults to 0.05}
 
 \item{position_legend}{A vector for the legend position; defaults to c(0.2, 0.2)}
 
