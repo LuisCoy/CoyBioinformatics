@@ -12,13 +12,14 @@ point_plot(
   sd,
   formula = y ~ stats::poly(x, 2),
   line_size = 0.7,
+  size_point = 2,
   error_bar_factor = 0.02,
   expand_y_factor = 0.2,
   expand_x_factor = 0.1,
   legend_position = c(0.8, 0.2),
   x_label = NULL,
   y_label = NULL,
-  col_label = NULL,
+  label_legend = NULL,
   title = NULL,
   tag = NULL,
   text_size = 20,
@@ -40,6 +41,8 @@ point_plot(
 
 \item{line_size}{A value for the line thickness; defaults to 0.7}
 
+\item{size_point}{A value for the point size; defaults to 2}
+
 \item{error_bar_factor}{A value that is multiplied by the x axis range to set the error bar width; defaults to 0.02}
 
 \item{expand_y_factor}{A values to increase the y axis by; defaults to 0.2}
@@ -52,7 +55,7 @@ point_plot(
 
 \item{y_label}{A character string giving the y axis label}
 
-\item{col_label}{A character string giving the colour label}
+\item{label_legend}{A character string giving the legend label}
 
 \item{title}{A character string giving the title}
 

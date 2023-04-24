@@ -8,13 +8,14 @@
 #' @param sd A character string giving the standard deviation values
 #' @param formula A formula for the curve; defaults to y~stats::poly(x,2)
 #' @param line_size A value for the line thickness; defaults to 0.7
+#' @param size_point A value for the point size; defaults to 2
 #' @param error_bar_factor A value that is multiplied by the x axis range to set the error bar width; defaults to 0.02
 #' @param expand_y_factor A values to increase the y axis by; defaults to 0.2
 #' @param expand_x_factor A values to increase the x axis by; defaults to 0.1
 #' @param legend_position A vector for the legend position; defaults to c(0.8, 0.2)
 #' @param x_label A character string giving the x axis label
 #' @param y_label A character string giving the y axis label
-#' @param col_label A character string giving the colour label
+#' @param label_legend A character string giving the legend label
 #' @param title A character string giving the title
 #' @param tag A character string giving the tag
 #' @param text_size A value for the text size; defaults to 20
@@ -32,13 +33,14 @@ point_plot <-
            sd,
            formula = y ~ stats::poly(x, 2),
            line_size = 0.7,
+           size_point = 2,
            error_bar_factor = 0.02,
            expand_y_factor = 0.2,
            expand_x_factor = 0.1,
            legend_position = c(0.80, 0.2),
            x_label = NULL,
            y_label = NULL,
-           col_label = NULL,
+           label_legend = NULL,
            title = NULL,
            tag = NULL,
            text_size = 20,
@@ -54,8 +56,8 @@ point_plot <-
     if (is.null(y_label)) {
       y_label <- y
     }
-    if (is.null(col_label)) {
-      col_label <- col
+    if (is.null(label_legend)) {
+      label_legend <- group
     }
 
     if (transparent) {
@@ -80,9 +82,10 @@ point_plot <-
       ggplot2::ggplot(data = df, ggplot2::aes(
         x = !!sym(x),
         y = !!sym(y),
-        col = !!sym(col)
+        col = !!sym(col),
+        shape = !!sym(col)
       )) +
-      ggplot2::geom_point() +
+      ggplot2::geom_point(size = size_point) +
       ggplot2::stat_smooth(
         method = lm,
         formula = formula,
@@ -92,7 +95,8 @@ point_plot <-
       ggplot2::labs(
         x = x_label,
         y = y_label,
-        col = col_label,
+        col = label_legend,
+        shape = label_legend,
         title = title,
         tag = tag
       ) +
