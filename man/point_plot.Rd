@@ -8,7 +8,7 @@ point_plot(
   df,
   x,
   y,
-  col = "condition",
+  group = "condition",
   sd,
   formula = y ~ stats::poly(x, 2),
   line_size = 0.7,
@@ -33,7 +33,7 @@ point_plot(
 
 \item{y}{A character string giving the y values}
 
-\item{col}{A character string giving the colour values; defaults to "condition"}
+\item{group}{A character string giving the group values; defaults to "condition"}
 
 \item{sd}{A character string giving the standard deviation values}
 

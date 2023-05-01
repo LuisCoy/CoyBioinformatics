@@ -4,7 +4,7 @@
 #' @param df Dataframe
 #' @param x A character string giving the x values
 #' @param y A character string giving the y values
-#' @param col A character string giving the colour values; defaults to "condition"
+#' @param group A character string giving the group values; defaults to "condition"
 #' @param sd A character string giving the standard deviation values
 #' @param formula A formula for the curve; defaults to y~stats::poly(x,2)
 #' @param line_size A value for the line thickness; defaults to 0.7
@@ -29,7 +29,7 @@ point_plot <-
   function(df,
            x,
            y,
-           col = "condition",
+           group = "condition",
            sd,
            formula = y ~ stats::poly(x, 2),
            line_size = 0.7,
@@ -82,8 +82,8 @@ point_plot <-
       ggplot2::ggplot(data = df, ggplot2::aes(
         x = !!sym(x),
         y = !!sym(y),
-        col = !!sym(col),
-        shape = !!sym(col)
+        col = !!sym(group),
+        shape = !!sym(group)
       )) +
       ggplot2::geom_point(size = size_point) +
       ggplot2::stat_smooth(
