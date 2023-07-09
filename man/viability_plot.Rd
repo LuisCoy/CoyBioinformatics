@@ -23,6 +23,7 @@ viability_plot(
   breaks_y = NULL,
   limit_x = NULL,
   limit_y = c(0, 120),
+  curve_upperl = Inf,
   title = NULL,
   tag = NULL,
   transparent = T,
@@ -65,6 +66,8 @@ viability_plot(
 \item{limit_x}{A vector giving the x axis limits}
 
 \item{limit_y}{A vector giving the y axis limits; defaults to c(0,120)}
+
+\item{curve_upperl}{A value for the upper limit of the dose-response model; defaults to Inf}
 
 \item{title}{A character string giving the title}
 
