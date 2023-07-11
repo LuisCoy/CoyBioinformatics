@@ -100,7 +100,7 @@ viability_plot <-
       ggplot2::geom_point(size = size_point) +
       ggplot2::stat_smooth(
         method = drc::drm,
-        method.args = list(fct = drc::LL.4()),
+        method.args = list(fct = drc::L.4()),
         se = F,
         linewidth = size_line) +
       ggplot2::labs(
