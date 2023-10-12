@@ -14,6 +14,7 @@ pca_plot(
   b_replicates,
   a_colour = "#D55E00",
   b_colour = "#3DB7E9",
+  symbols = c(15, 19),
   text_size = 20,
   title = NULL,
   tag = NULL,
@@ -42,6 +43,8 @@ pca_plot(
 \item{a_colour}{Hexadecimal color code for the first group.}
 
 \item{b_colour}{Hexadecimal color code for the second group.}
+
+\item{symbols}{A vector for the symbol codes; defaults to c(15, 19).}
 
 \item{text_size}{Integer value specifying the text size in the plot.}
 

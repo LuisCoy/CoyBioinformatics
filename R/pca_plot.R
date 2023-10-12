@@ -11,6 +11,7 @@
 #' @param b_replicates Integer value representing the number of replicates in the second group.
 #' @param a_colour Hexadecimal color code for the first group.
 #' @param b_colour Hexadecimal color code for the second group.
+#' @param symbols A vector for the symbol codes; defaults to c(15, 19).
 #' @param text_size Integer value specifying the text size in the plot.
 #' @param title Character string for the plot title.
 #' @param tag Character string for the plot tag.
@@ -38,6 +39,7 @@ pca_plot <-
            b_replicates,
            a_colour = "#D55E00",
            b_colour = "#3DB7E9",
+           symbols = c(15,19),
            text_size = 20,
            title = NULL,
            tag = NULL,
@@ -92,6 +94,9 @@ pca_plot <-
                                               b_colour),
                                    labels = c(a,
                                               b)) +
+      ggplot2::scale_shape_manual(legend_label,
+                                  values = symbols,
+                                  labels = c(a,b))+
       ggplot2::theme_light()+
       ggplot2::theme(legend.background = ggplot2::element_rect(fill = scales::alpha(legend_colour,legend_alpha), colour = NULL),
                      legend.position = legend_position,
