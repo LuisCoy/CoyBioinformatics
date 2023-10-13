@@ -17,6 +17,8 @@
 #' @param legend_colour Hexadecimal color code for the legend background; defaults to white.
 #' @param legend_alpha A value between 0 and 1 for the transparency of the legend; defaults to 0.5.
 #' @param transparent A logical value for a transparent background; defaults to True.
+#' @param x_angle A value giving the angle of the x axis text; defaults to 45.
+#' @param x_just A value giving the horizontal justification of the x axis text; defaults to 1.
 #'
 #' @return plot
 #' @export
@@ -35,16 +37,19 @@ missing_data_plot <-
            title = NULL,
            tag = NULL,
            legend_label = NULL,
-           legend_position = c(0.6,0.8),
+           legend_position = c(0.8,0.2),
            legend_colour = "white",
            legend_alpha = 0.5,
-           transparent = T) {
+           transparent = T,
+           x_angle = 45,
+           x_just = 1) {
     #plot theme
     if (transparent) {
       plot_theme <- ggplot2::theme(
         panel.background = ggplot2::element_rect(fill = 'transparent'),
         plot.background = ggplot2::element_rect(fill = 'transparent', color =
-                                                  NA)
+                                                  NA),
+        strip.background = ggplot2::element_rect(fill = 'transparent')
       )
     } else {
       plot_theme <-
@@ -71,6 +76,9 @@ missing_data_plot <-
       ggplot2::theme(legend.background = ggplot2::element_rect(fill = scales::alpha(legend_colour,legend_alpha), colour = NULL),
                      legend.position = legend_position,
                      legend.key = ggplot2::element_rect(fill = scales::alpha("white", 0)),
-                     text = ggplot2::element_text(size = text_size)) +
+                     text = ggplot2::element_text(size = text_size),
+                     axis.text.x = ggplot2::element_text(angle = x_angle, hjust = x_just),
+                     strip.text = ggplot2::element_text(colour = "black", face = "bold"),
+                     strip.background = ggplot2::element_rect(fill = 'white')) +
       plot_theme
   }

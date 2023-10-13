@@ -17,10 +17,12 @@ missing_data_plot(
   title = NULL,
   tag = NULL,
   legend_label = NULL,
-  legend_position = c(0.6, 0.8),
+  legend_position = c(0.8, 0.2),
   legend_colour = "white",
   legend_alpha = 0.5,
-  transparent = T
+  transparent = T,
+  x_angle = 45,
+  x_just = 1
 )
 }
 \arguments{
@@ -55,6 +57,10 @@ missing_data_plot(
 \item{legend_alpha}{A value between 0 and 1 for the transparency of the legend; defaults to 0.5.}
 
 \item{transparent}{A logical value for a transparent background; defaults to True.}
+
+\item{x_angle}{A value giving the angle of the x axis text; defaults to 45.}
+
+\item{x_just}{A value giving the horizontal justification of the x axis text; defaults to 1.}
 }
 \value{
 plot
