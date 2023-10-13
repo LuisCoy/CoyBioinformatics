@@ -12,7 +12,8 @@
 #' @param a_colour Hexadecimal color code for the first group.
 #' @param b_colour Hexadecimal color code for the second group.
 #' @param symbols A vector containing the symbol codes; defaults to c(15, 19).
-#' @param text_size Integer value specifying the text size in the plot.
+#' @param symbol_size Integer value specifying the symbol size; defaults to 2.
+#' @param text_size Integer value specifying the text size in the plot; defaults to 20.
 #' @param title Character string for the plot title.
 #' @param tag Character string for the plot tag.
 #' @param legend_label Character string for the plot legend label.
@@ -40,6 +41,7 @@ pca_plot <-
            a_colour = "#D55E00",
            b_colour = "#3DB7E9",
            symbols = c(15,19),
+           symbol_size = 2,
            text_size = 20,
            title = NULL,
            tag = NULL,
@@ -83,6 +85,9 @@ pca_plot <-
                        var.axes = F,
                        groups = groups,
                        ellipse = T) +
+      ggplot2::geom_point(aes(shape = groups,
+                              color = groups),
+                          size = symbol_size)+
       ggplot2::labs(
         title = title,
         tags = tag,

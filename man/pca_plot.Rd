@@ -15,6 +15,7 @@ pca_plot(
   a_colour = "#D55E00",
   b_colour = "#3DB7E9",
   symbols = c(15, 19),
+  symbol_size = 2,
   text_size = 20,
   title = NULL,
   tag = NULL,
@@ -46,7 +47,9 @@ pca_plot(
 
 \item{symbols}{A vector containing the symbol codes; defaults to c(15, 19).}
 
-\item{text_size}{Integer value specifying the text size in the plot.}
+\item{symbol_size}{Integer value specifying the symbol size; defaults to 2.}
+
+\item{text_size}{Integer value specifying the text size in the plot; defaults to 20.}
 
 \item{title}{Character string for the plot title.}
 
