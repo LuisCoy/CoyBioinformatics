@@ -6,7 +6,7 @@
 #' @param name A character string giving the column containing present or missing
 #' @param value A character string giving the column containing the number of proteins present or missing
 #' @param group A character string giving the column with the group IDs e.g. "Treated" and "Control"
-#' @param colours A character vector giving the colours; defaults to "#3DB7E9" and "#F748A5".
+#' @param colours A character vector giving the colours; defaults to "#F748A5" and "#3DB7E9".
 #' @param x_label X axis label; defaults to "Samples"
 #' @param y_label Y axis label; defaults to "Number of proteins"
 #' @param title A character string giving the plot Title
@@ -24,7 +24,7 @@ missing_data_plot <-
            name,
            value,
            group,
-           colours = c("#3DB7E9","#F748A5"),
+           colours = c("#F748A5","#3DB7E9"),
            x_label = "Samples",
            y_label = "Number of proteins",
            title = NULL,

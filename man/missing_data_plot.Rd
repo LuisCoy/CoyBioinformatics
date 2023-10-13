@@ -10,7 +10,7 @@ missing_data_plot(
   name,
   value,
   group,
-  colours = c("#3DB7E9", "#F748A5"),
+  colours = c("#F748A5", "#3DB7E9"),
   x_label = "Samples",
   y_label = "Number of proteins",
   title = NULL,
@@ -30,7 +30,7 @@ missing_data_plot(
 
 \item{group}{A character string giving the column with the group IDs e.g. "Treated" and "Control"}
 
-\item{colours}{A character vector giving the colours; defaults to "#3DB7E9" and "#F748A5".}
+\item{colours}{A character vector giving the colours; defaults to "#F748A5" and "#3DB7E9".}
 
 \item{x_label}{X axis label; defaults to "Samples"}
 
