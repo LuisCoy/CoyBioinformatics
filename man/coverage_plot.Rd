@@ -12,43 +12,58 @@ coverage_plot(
   a,
   b,
   group,
-  a_colour = "#F748A5",
-  b_colour = "#3BB9FF",
+  a_colour = "#D55E00",
+  b_colour = "#3DB7E9",
   x_label = "Number of Samples",
   y_label = "Percentage of Proteins",
+  text_size = 20,
   title = NULL,
   tag = NULL,
-  legend_label = NULL
+  legend_label = NULL,
+  legend_position = c(0.85, 0.2),
+  legend_colour = "white",
+  legend_alpha = 0.5,
+  transparent = T
 )
 }
 \arguments{
 \item{df}{Dataframe}
 
-\item{number_of_samples}{A character string giving the column containing the number of samples}
+\item{number_of_samples}{A character string giving the column containing the number of samples.}
 
-\item{percentage}{A character string giving the column that contains the percentages}
+\item{percentage}{A character string giving the column that contains the percentages.}
 
-\item{tally}{A character string giving the column that contains the number of proteins}
+\item{tally}{A character string giving the column that contains the number of proteins.}
 
-\item{a}{A character string giving the name of group a e.g. "Treated"}
+\item{a}{A character string giving the name of group a e.g. "Treated".}
 
-\item{b}{A character string giving the name of group b e.g. "Control"}
+\item{b}{A character string giving the name of group b e.g. "Control".}
 
-\item{group}{A character string giving the column containing the group IDs}
+\item{group}{A character string giving the column containing the group IDs.}
 
-\item{a_colour}{A character string giving the colour for group a}
+\item{a_colour}{A character string giving the colour for group a; defualts to "#D55E00".}
 
-\item{b_colour}{A character string giving the colour for group b}
+\item{b_colour}{A character string giving the colour for group b; defaults to "#3DB7E9".}
 
-\item{x_label}{X axis label; defaults to "Number of Samples"}
+\item{x_label}{X axis label; defaults to "Number of Samples".}
 
-\item{y_label}{Y axis label; defaults to "Percentage of Proteins"}
+\item{y_label}{Y axis label; defaults to "Percentage of Proteins".}
 
-\item{title}{A character string giving the plot Title}
+\item{text_size}{Integer value specifying the text size in the plot; defaults to 20.}
 
-\item{tag}{A character string giving the  plot tag}
+\item{title}{A character string giving the plot Title.}
 
-\item{legend_label}{A character string giving the legend label}
+\item{tag}{A character string giving the  plot tag.}
+
+\item{legend_label}{A character string giving the legend label.}
+
+\item{legend_position}{A vector for the legend position; defaults to c(0.8, 0.2).}
+
+\item{legend_colour}{Hexadecimal color code for the legend background; defaults to white.}
+
+\item{legend_alpha}{A value between 0 and 1 for the transparency of the legend; defaults to 0.5.}
+
+\item{transparent}{A logical value for a transparent background; defaults to True.}
 }
 \value{
 Plot
