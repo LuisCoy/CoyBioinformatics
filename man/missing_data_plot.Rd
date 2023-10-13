@@ -13,9 +13,13 @@ missing_data_plot(
   colours = c("#F748A5", "#3DB7E9"),
   x_label = "Samples",
   y_label = "Number of proteins",
+  text_size = 20,
   title = NULL,
   tag = NULL,
   legend_label = NULL,
+  legend_position = c(0.6, 0.8),
+  legend_colour = "white",
+  legend_alpha = 0.5,
   transparent = T
 )
 }
@@ -36,11 +40,19 @@ missing_data_plot(
 
 \item{y_label}{Y axis label; defaults to "Number of proteins"}
 
+\item{text_size}{Integer value specifying the text size in the plot; defaults to 20.}
+
 \item{title}{A character string giving the plot Title}
 
 \item{tag}{A character string giving the  plot tag}
 
 \item{legend_label}{A character string giving the legend label}
+
+\item{legend_position}{A vector for the legend position; defaults to c(0.8, 0.2).}
+
+\item{legend_colour}{Hexadecimal color code for the legend background; defaults to white.}
+
+\item{legend_alpha}{A value between 0 and 1 for the transparency of the legend; defaults to 0.5.}
 
 \item{transparent}{A logical value for a transparent background; defaults to True.}
 }
