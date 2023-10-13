@@ -44,7 +44,7 @@ pca_plot(
 
 \item{b_colour}{Hexadecimal color code for the second group.}
 
-\item{symbols}{A vector for the symbol codes; defaults to c(15, 19).}
+\item{symbols}{A vector containing the symbol codes; defaults to c(15, 19).}
 
 \item{text_size}{Integer value specifying the text size in the plot.}
 
