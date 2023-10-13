@@ -10,11 +10,13 @@ missing_data_plot(
   name,
   value,
   group,
+  colours = c("#3DB7E9", "#F748A5"),
   x_label = "Samples",
   y_label = "Number of proteins",
   title = NULL,
   tag = NULL,
-  legend_label = NULL
+  legend_label = NULL,
+  transparent = T
 )
 }
 \arguments{
@@ -28,6 +30,8 @@ missing_data_plot(
 
 \item{group}{A character string giving the column with the group IDs e.g. "Treated" and "Control"}
 
+\item{colours}{A character vector giving the colours; defaults to "#3DB7E9" and "#F748A5".}
+
 \item{x_label}{X axis label; defaults to "Samples"}
 
 \item{y_label}{Y axis label; defaults to "Number of proteins"}
@@ -37,6 +41,8 @@ missing_data_plot(
 \item{tag}{A character string giving the  plot tag}
 
 \item{legend_label}{A character string giving the legend label}
+
+\item{transparent}{A logical value for a transparent background; defaults to True.}
 }
 \value{
 plot
