@@ -10,16 +10,21 @@ histogram_overlapping(
   a,
   b,
   group,
-  colour.a = "#F748A5",
-  colour.b = "#3BB9FF",
+  colour.a = "#D55E00",
+  colour.b = "#3DB7E9",
   bins = 100,
   binwidth = NULL,
   label.x = NULL,
   label.y = "Count",
+  size.text = 20,
   title = NULL,
   tag = NULL,
   label.legend = NULL,
-  alpha = 0.5
+  alpha.bar = 0.5,
+  position.legend = c(0.8, 0.2),
+  colour.legend = "white",
+  alpha.legend = 0.5,
+  transparent = F
 )
 }
 \arguments{
@@ -33,9 +38,9 @@ histogram_overlapping(
 
 \item{group}{Character string giving the column containing the group IDs}
 
-\item{colour.a}{Character string giving the fill color for group a; defaults to "#F748A5"}
+\item{colour.a}{Character string giving the fill color for group a; defaults to "#D55E00"}
 
-\item{colour.b}{Character string giving the fill color for group b;defaults to "#3BB9FF"}
+\item{colour.b}{Character string giving the fill color for group b;defaults to "#3DB7E9"}
 
 \item{bins}{Number of bins to use in the histogram; defaults to 100}
 
@@ -45,13 +50,23 @@ histogram_overlapping(
 
 \item{label.y}{Y axis label; defaults to "Count"}
 
+\item{size.text}{Integer value specifying the text size in the plot; defaults to 20}
+
 \item{title}{Character string giving the plot title; defaults to NULL}
 
 \item{tag}{Character string giving the plot tag; defaults to NULL}
 
 \item{label.legend}{Character string giving the legend label; defaults to NULL}
 
-\item{alpha}{The transparency of the fill color; defaults to 0.5}
+\item{alpha.bar}{The transparency of the fill color; defaults to 0.5}
+
+\item{position.legend}{A vector for the legend position; defaults to c(0.8, 0.2).}
+
+\item{colour.legend}{Hexadecimal color code for the legend background; defaults to white.}
+
+\item{alpha.legend}{A value between 0 and 1 for the transparency of the legend; defaults to 0.5.}
+
+\item{transparent}{A logical value for a transparent background; defaults to False.}
 }
 \value{
 A ggplot2 histogram plot with vertical lines indicating the median value of each group
