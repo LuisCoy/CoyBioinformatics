@@ -7,9 +7,14 @@
 pvalue_histogram(
   df,
   x = "pvalue",
+  binwidth = 0.05,
   text_size = 20,
-  axis_label_x = "p value",
-  axis_label_y = "Frequency"
+  axis_label_x = bquote(italic("P") * " value"),
+  axis_label_y = "Frequency",
+  transparent = T,
+  colour_fill = "#2271B2",
+  x_angle = 45,
+  x_hjust = 1
 )
 }
 \arguments{
@@ -17,7 +22,21 @@ pvalue_histogram(
 
 \item{x}{A character string giving the p value column name}
 
+\item{binwidth}{A value for the binwidth; defaults to 0.05}
+
 \item{text_size}{Font size; defaults to 20}
+
+\item{axis_label_x}{X axis label; defaults to bquote(italic("P")*" value")}
+
+\item{axis_label_y}{Y axis label; defaults to "Frequency"}
+
+\item{transparent}{A logical value for a transparent background; defaults to True}
+
+\item{colour_fill}{A character string for the bar fill colour; defaults to "#2271B2"}
+
+\item{x_angle}{A value giving the angle of the x axis text; defaults to 45}
+
+\item{x_hjust}{A value giving the horizontal justification of the x axis text; defaults to 1}
 }
 \value{
 Histogram
