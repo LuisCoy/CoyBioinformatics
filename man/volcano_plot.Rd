@@ -10,7 +10,7 @@ volcano_plot(
   y = "Log10pvalue",
   p_value = 0.05,
   log2foldvalue = 1,
-  point_size = 2,
+  point_size = 1,
   text_size = 20,
   axis_label_x = "Fold Change",
   axis_label_y = bquote(italic("P") * " value"),
@@ -26,13 +26,15 @@ volcano_plot(
 
 \item{p_value}{p value cut off; defaults to 0.05}
 
-\item{point_size}{Point size; defaults to 2}
+\item{point_size}{Point size; defaults to 1}
 
 \item{text_size}{Text size; defaults to 20}
 
 \item{axis_label_x}{X axis label; defaults to "Fold Change"}
 
-\item{axis_label_y}{Y axis label; defaults to bquote(italic("P"))}
+\item{axis_label_y}{Y axis label; defaults to bquote(italic("P")*" value")}
+
+\item{transparent}{A logical value for a transparent background; defaults to True}
 
 \item{Log2foldvalue}{Log2 fold change cut off; defaults to 1}
 }

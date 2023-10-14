@@ -5,10 +5,11 @@
 #' @param y A character string giving the Log10 p value column name
 #' @param p_value p value cut off; defaults to 0.05
 #' @param Log2foldvalue Log2 fold change cut off; defaults to 1
-#' @param point_size Point size; defaults to 2
+#' @param point_size Point size; defaults to 1
 #' @param text_size Text size; defaults to 20
 #' @param axis_label_x X axis label; defaults to "Fold Change"
-#' @param axis_label_y Y axis label; defaults to bquote(italic("P"))
+#' @param axis_label_y Y axis label; defaults to bquote(italic("P")*" value")
+#' @param transparent A logical value for a transparent background; defaults to True
 #'
 #' @return Volcano plot
 #' @export
@@ -20,7 +21,7 @@ volcano_plot <-
            y = "Log10pvalue",
            p_value = 0.05,
            log2foldvalue = 1,
-           point_size = 2,
+           point_size = 1,
            text_size = 20,
            axis_label_x = "Fold Change",
            axis_label_y = bquote(italic("P")*" value"),
