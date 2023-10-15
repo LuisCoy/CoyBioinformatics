@@ -16,6 +16,7 @@
 #' @param text_size Integer value specifying the text size in the plot; defaults to 20.
 #' @param title Character string for the plot title.
 #' @param tag Character string for the plot tag.
+#' @param axis_label_end Character string for the test following the PC explained variance percentage; default is "%)"
 #' @param legend_label Character string for the plot legend label.
 #' @param legend_position A vector for the legend position; defaults to c(0.8, 0.2).
 #' @param transparent A logical value for a transparent background; defaults to True.
@@ -45,6 +46,7 @@ pca_plot <-
            text_size = 20,
            title = NULL,
            tag = NULL,
+           axis_label_end = "%)",
            legend_label = NULL,
            legend_position = c(0.6,0.8),
            legend_colour = "white",
@@ -91,8 +93,8 @@ pca_plot <-
       ggplot2::labs(
         title = title,
         tags = tag,
-        x = stringr::str_c("PC1 (", var_PC1, "% explained var.)"),
-        y = stringr::str_c("PC2 (", var_PC2, "% explained var.)")
+        x = stringr::str_c("PC1 (", var_PC1, axis_label_end),
+        y = stringr::str_c("PC2 (", var_PC2, axis_label_end)
       ) +
       ggplot2::scale_colour_manual(legend_label,
                                    values = c(a_colour,

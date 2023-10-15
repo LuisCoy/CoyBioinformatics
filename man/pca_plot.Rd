@@ -19,6 +19,7 @@ pca_plot(
   text_size = 20,
   title = NULL,
   tag = NULL,
+  axis_label_end = "\%)",
   legend_label = NULL,
   legend_position = c(0.6, 0.8),
   legend_colour = "white",
@@ -54,6 +55,8 @@ pca_plot(
 \item{title}{Character string for the plot title.}
 
 \item{tag}{Character string for the plot tag.}
+
+\item{axis_label_end}{Character string for the test following the PC explained variance percentage; default is "\%)"}
 
 \item{legend_label}{Character string for the plot legend label.}
 
