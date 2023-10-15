@@ -15,7 +15,7 @@ coverage_plot(
   a_colour = "#D55E00",
   b_colour = "#3DB7E9",
   x_label = "Number of Samples",
-  y_label = "Percentage of Proteins",
+  y_label = "Percentage of Proteins (\%)",
   text_size = 20,
   title = NULL,
   tag = NULL,
@@ -47,7 +47,7 @@ coverage_plot(
 
 \item{x_label}{X axis label; defaults to "Number of Samples".}
 
-\item{y_label}{Y axis label; defaults to "Percentage of Proteins".}
+\item{y_label}{Y axis label; defaults to "Percentage of Proteins (\%)".}
 
 \item{text_size}{Integer value specifying the text size in the plot; defaults to 20.}
 
