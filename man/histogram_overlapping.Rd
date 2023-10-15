@@ -15,7 +15,7 @@ histogram_overlapping(
   bins = 100,
   binwidth = NULL,
   label.x = NULL,
-  label.y = "Count",
+  label.y = "Frequency",
   size.text = 20,
   title = NULL,
   tag = NULL,
@@ -48,7 +48,7 @@ histogram_overlapping(
 
 \item{label.x}{X axis label; defaults to NULL}
 
-\item{label.y}{Y axis label; defaults to "Count"}
+\item{label.y}{Y axis label; defaults to "Frequency"}
 
 \item{size.text}{Integer value specifying the text size in the plot; defaults to 20}
 

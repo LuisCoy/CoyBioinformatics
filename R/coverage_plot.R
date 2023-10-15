@@ -10,8 +10,8 @@
 #' @param group A character string giving the column containing the group IDs.
 #' @param a_colour A character string giving the colour for group a; defualts to "#D55E00".
 #' @param b_colour A character string giving the colour for group b; defaults to "#3DB7E9".
-#' @param x_label X axis label; defaults to "Number of Samples".
-#' @param y_label Y axis label; defaults to "Percentage of Proteins (%)".
+#' @param x_label X axis label; defaults to "Number of samples".
+#' @param y_label Y axis label; defaults to "Percentage of proteins (%)".
 #' @param text_size Integer value specifying the text size in the plot; defaults to 20.
 #' @param title A character string giving the plot Title.
 #' @param tag A character string giving the  plot tag.
@@ -35,8 +35,8 @@ coverage_plot <-
            group,
            a_colour = "#D55E00",
            b_colour = "#3DB7E9",
-           x_label = "Number of Samples",
-           y_label = "Percentage of Proteins (%)",
+           x_label = "Number of samples",
+           y_label = "Percentage of proteins (%)",
            text_size = 20,
            title = NULL,
            tag = NULL,

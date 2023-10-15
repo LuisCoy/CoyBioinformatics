@@ -14,8 +14,8 @@ coverage_plot(
   group,
   a_colour = "#D55E00",
   b_colour = "#3DB7E9",
-  x_label = "Number of Samples",
-  y_label = "Percentage of Proteins (\%)",
+  x_label = "Number of samples",
+  y_label = "Percentage of proteins (\%)",
   text_size = 20,
   title = NULL,
   tag = NULL,
@@ -45,9 +45,9 @@ coverage_plot(
 
 \item{b_colour}{A character string giving the colour for group b; defaults to "#3DB7E9".}
 
-\item{x_label}{X axis label; defaults to "Number of Samples".}
+\item{x_label}{X axis label; defaults to "Number of samples".}
 
-\item{y_label}{Y axis label; defaults to "Percentage of Proteins (\%)".}
+\item{y_label}{Y axis label; defaults to "Percentage of proteins (\%)".}
 
 \item{text_size}{Integer value specifying the text size in the plot; defaults to 20.}
 

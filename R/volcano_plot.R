@@ -7,7 +7,7 @@
 #' @param Log2foldvalue Log2 fold change cut off; defaults to 1
 #' @param point_size Point size; defaults to 1
 #' @param text_size Text size; defaults to 20
-#' @param axis_label_x X axis label; defaults to "Fold Change"
+#' @param axis_label_x X axis label; defaults to "Fold change"
 #' @param axis_label_y Y axis label; defaults to bquote(italic("P")*" value")
 #' @param transparent A logical value for a transparent background; defaults to True
 #'
@@ -23,7 +23,7 @@ volcano_plot <-
            log2foldvalue = 1,
            point_size = 1,
            text_size = 20,
-           axis_label_x = "Fold Change",
+           axis_label_x = "Fold change",
            axis_label_y = bquote(italic("P")*" value"),
            transparent = T) {
     x_axis_length <- base::round(max(sqrt(df[, x] ^ 2)), 0) + 1

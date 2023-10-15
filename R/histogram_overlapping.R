@@ -13,7 +13,7 @@
 #' @param bins Number of bins to use in the histogram; defaults to 100
 #' @param binwidth Width of the bins in the histogram; defaults to NULL
 #' @param label.x X axis label; defaults to NULL
-#' @param label.y Y axis label; defaults to "Count"
+#' @param label.y Y axis label; defaults to "Frequency"
 #' @param size.text Integer value specifying the text size in the plot; defaults to 20
 #' @param title Character string giving the plot title; defaults to NULL
 #' @param tag Character string giving the plot tag; defaults to NULL
@@ -42,7 +42,7 @@ histogram_overlapping <-
            bins = 100,
            binwidth = NULL,
            label.x = NULL,
-           label.y = "Count",
+           label.y = "Frequency",
            size.text = 20,
            title = NULL,
            tag = NULL,

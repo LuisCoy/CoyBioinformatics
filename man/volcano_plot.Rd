@@ -12,7 +12,7 @@ volcano_plot(
   log2foldvalue = 1,
   point_size = 1,
   text_size = 20,
-  axis_label_x = "Fold Change",
+  axis_label_x = "Fold change",
   axis_label_y = bquote(italic("P") * " value"),
   transparent = T
 )
@@ -30,7 +30,7 @@ volcano_plot(
 
 \item{text_size}{Text size; defaults to 20}
 
-\item{axis_label_x}{X axis label; defaults to "Fold Change"}
+\item{axis_label_x}{X axis label; defaults to "Fold change"}
 
 \item{axis_label_y}{Y axis label; defaults to bquote(italic("P")*" value")}
 
