@@ -86,7 +86,8 @@ pca_plot <-
     ggbiplot::ggbiplot(pca,
                        var.axes = F,
                        groups = groups,
-                       ellipse = T) +
+                       ellipse = T,
+                       alpha = 0) +
       ggplot2::geom_point(aes(shape = groups,
                               color = groups),
                           size = symbol_size)+
