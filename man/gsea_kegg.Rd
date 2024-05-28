@@ -4,14 +4,14 @@
 \alias{gsea_kegg}
 \title{gsea_kegg}
 \usage{
-gsea_kegg(df, entrezID_column, s2n_column, pvalue_cutoff = 1)
+gsea_kegg(df, entrezID_column, ranking_metric_column, pvalue_cutoff = 1)
 }
 \arguments{
 \item{df}{Dfferential expression dataframe}
 
 \item{entrezID_column}{Character string for the name of the column containing the Entrez IDs}
 
-\item{s2n_column}{Character string for the name of the column containing the signal to noise data}
+\item{ranking_metric_column}{Character string for the name of the column containing the ranking metric data for example signal-to-noise or Log2 Fold Change}
 
 \item{pvalue_cutoff}{Numeric value for the p value cutoff used in the GSEA KEGG results}
 }
@@ -19,5 +19,8 @@ gsea_kegg(df, entrezID_column, s2n_column, pvalue_cutoff = 1)
 Dataframe of GSEA KEGG results
 }
 \description{
-Function to create a gene list and perform GSEA using the KEGG database
+Function to create a gene list and perform GSEA using the KEGG database. Uses ClusterProfiler's GSEA function gseKEGG.
+}
+\examples{
+gsea_kegg(example_dep_1, entrezID_column = "EntrezID", ranking_metric_column = "S2N")
 }
