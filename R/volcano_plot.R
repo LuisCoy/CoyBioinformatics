@@ -14,7 +14,7 @@
 #' @return Volcano plot
 #' @export
 #'
-#' @examples volcano_plot(example_proteomic_data)
+#' @examples volcano_plot(example_dep_1)
 volcano_plot <-
   function(df,
            x = "Log2fold",

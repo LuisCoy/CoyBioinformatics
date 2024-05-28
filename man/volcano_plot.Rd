@@ -45,5 +45,5 @@ Volcano plot
 Volcano plot for proteomic data
 }
 \examples{
-volcano_plot(example_proteomic_data)
+volcano_plot(example_dep_1)
 }
